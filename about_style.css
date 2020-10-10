@@ -31,6 +31,13 @@ p{
     color:white;
     text-align: left;
 }
+.git_icon{
+  position:fixed;
+  bottom:50px;
+  left:0px;
+  height:50px;
+  width:100px;
+}
   @keyframes shine {
     0% {
       color: #6b1839;
