@@ -1,21 +1,24 @@
 var CPS = 0, numChar = 0;
 var charNumArray = []; // This array will hold 
- charArray = [];
+var charArray = [];
 
 $(document).ready(function(){
 
     $(document).on("keypress", function(){
         if (CPS == 0){
             numChar++;
+            console.log("hello");
             startTimer(); // temporary variable name for Kensal's time function
         }
         else{
             CPS = calcCPS();
-            
+            $(document).keypress(function(event){
+                alert(String.fromCharCode(event.which)); 
+            });
         }
-    })
+    });
 
-})
+});
 
 // Functions
 
@@ -25,5 +28,11 @@ function calcCPS(){
     numChar++;
 
     return numChar / timeElapsed;
+
+}
+
+function heatData(){
+
+
 
 }
