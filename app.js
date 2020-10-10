@@ -37,7 +37,7 @@ function calcCPS() {
 
     let timeElapsed = getTimeElapsed(); //this function gets the amount of time passed since startTimer has been called
     numChar++;
-    alert("CPS = " + (numChar / timeElapsed));
+    document.getElementById("cpsPar").innerHTML = ("CPS = " + (numChar / timeElapsed));
     return numChar / timeElapsed;
 
 }
