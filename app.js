@@ -1,6 +1,6 @@
 var CPS = 0, points = 0, numChar = 0, flag = false, length = 0;
 var flag2 = false;
-var charArray; // Holds characters and number of times pressed
+var charArray, charNumArray, condensedCharArray;
 var startTime, endTime, numChar = -1;
 var key;
 
@@ -24,13 +24,34 @@ $(document).ready(function(){
           }
           
           key = event.key || event.keyCode;
-          updateHeatData(key);
+          charArray.push(key);
 
           console.log("Current heat data array");
-          for(var i = 0; i < charArray.length; i++){
-              console.log("[" + charArray[i][0] + "," + charArray[i][1] + "]");
-          }
+          console.log(charArray);
         }
+    });
+
+    $(".sign").click(function(){
+
+        charArray.sort();
+        console.log("sorted array:" + charArray);
+        for(var i = 0; i < charArray.length; i++){
+            var total = 0;
+            var current = charArray[i];
+            condensedCharArray.push(current);
+            for(var j = i; j < charArray.length; j++){
+                if(charArray[j] == charArray[i]){
+                    total++;
+                }
+            }
+            while(charArray[i] == current){
+                i++;
+            }
+            charNumArray.push(total);
+        }
+        console.log(condensedCharArray);
+        console.log(charNumArray);
+
     });
 
 });
@@ -41,6 +62,8 @@ $(document).ready(function(){
 function create2DArray() {
 
   charArray = [];
+  charNumArray = [];
+  condensedCharArray = [];
 
 }
 
@@ -68,21 +91,4 @@ function getTimeElapsed() {
   // get seconds 
   var seconds = Math.round(timeDiff);
   return seconds;
-}
-
-function updateHeatData(key){
-
-    // for(var i = 0; i < charArray.length; i++){
-    //     if(charArray[i][0] == key){
-    //         charArray[i][1]++;
-    //         flag = true;
-    //         break;
-    //     }
-    // }
-    
-    //if(flag == false){
-        charArray[charArray.length] = [key, 1];
-    //}
-    //flag = false;
-
 }
