@@ -5,15 +5,16 @@ body {
 }
 
 a{
-    position: relative;
-    left:1473px;
-    top: 5px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
     text-decoration:none;
 }
 
 
 h1{
     position:relative;
+    left:20px;
     bottom:10px;
     color:white;
     font-size: 80px;
@@ -21,9 +22,10 @@ h1{
     font-weight: 400;
 }
 
+
 p{
     position: relative;
-    left:10px;
+    left:20px;
     line-height: 1.6em;
     font-size: 35px;
     color:white;

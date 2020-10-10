@@ -5,9 +5,9 @@ body {
 }
 
 a{
-    position: relative;
-    left:1473px;
-    top: 5px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
     text-decoration:none;
 }
 
