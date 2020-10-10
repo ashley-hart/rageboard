@@ -1,4 +1,4 @@
-var CPS = 0, numChar = 0, flag = 0;
+var CPS = 0, points = 0, numChar = 0, flag = 0;
 var charArray; // Holds characters and number of times pressed
 var startTime, endTime, numChar = -1;
 
@@ -12,7 +12,12 @@ $(document).ready(function(){
             start(); // temporary variable name for Kensal's time function
         }
         else {
-        	calcCPS();
+        	CPS = calcCPS();
+          document.getElementById("cpsPar").innerHTML = ("CPS = " + CPS);
+          if (CPS < 1000) {
+            points += Math.round(CPS / 10);
+            document.getElementById("ptsPar").innerHTML = ("Points = " + points);
+          }
         }
     });
 
@@ -37,8 +42,10 @@ function calcCPS() {
 
     let timeElapsed = getTimeElapsed(); //this function gets the amount of time passed since startTimer has been called
     numChar++;
-    document.getElementById("cpsPar").innerHTML = ("CPS = " + (numChar / timeElapsed));
-    return numChar / timeElapsed;
+    if (numChar / timeElapsed < 0.1)
+      return 0.1
+    else
+      return numChar / timeElapsed;
 
 }
 
