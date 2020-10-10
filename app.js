@@ -1,29 +1,47 @@
-var CPS = 0, numChar = 0;
+var CPS = 0, numChar = 0, flag = 0;
 var charNumArray = []; // This array will hold 
- charArray = [];
+var charArray = [];
 
 $(document).ready(function(){
 
     $(document).on("keypress", function(){
-        if (CPS == 0){
+        if (flag == 0){
             numChar++;
-            startTimer(); // temporary variable name for Kensal's time function
+            flag = 1;
+            start(); // temporary variable name for Kensal's time function
         }
-        else{
-            CPS = calcCPS();
-            
+        else {
+        	calcCPS();
         }
-    })
+    });
 
-})
+});
+
+var startTime, endTime;
 
 // Functions
 
-function calcCPS(){
+function calcCPS() {
 
     let timeElapsed = getTimeElapsed(); //this function gets the amount of time passed since startTimer has been called
     numChar++;
 
+    alert("CPS = " + (numChar / timeElapsed));
     return numChar / timeElapsed;
 
+}
+
+function start() {
+	startTime = performance.now();
+}
+
+function getTimeElapsed() {
+  endTime = performance.now();
+  var timeDiff = endTime - startTime; //in ms 
+  // strip the ms 
+  timeDiff /= 1000; 
+  
+  // get seconds 
+  var seconds = Math.round(timeDiff);
+  return seconds;
 }
