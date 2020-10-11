@@ -26,16 +26,17 @@ $(document).ready(function(){
           CPM = Math.round(calcCPM());
           document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
           if (CPM < 10000) {
-            points += Math.round(CPM / 10);
+            //points += Math.round(CPM / 10);
             go(Math.round(CPM / 10));
-            document.getElementById("ptsPar").innerHTML = ("Points = " + points);
+            console.log("Score = " + points);
+            //document.getElementById("ptsPar").innerHTML = ("Points = " + points);
           }
           
           key = event.key || event.keyCode;
           charArray.push(key);
 
           // Shake every 1000 points
-          if (points % 1000 <= 100)
+          if (points % 1000 <= 200)
             $( "#page-content" ).shake(100,10,3);
 
           console.log("Current heat data array");
