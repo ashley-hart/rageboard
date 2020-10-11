@@ -3,6 +3,8 @@ var flag2 = false;
 var charArray, charNumArray, condensedCharArray;
 var startTime, endTime, numChar = -1;
 var key, offset = 0;
+var rand1, rand2;
+
 
 
 
@@ -35,8 +37,23 @@ $(document).ready(function(){
           key = event.key || event.keyCode;
           charArray.push(key);
 
+
+          rand1 = Math.random(100);
+          Math.floor(rand1);
+          rand2 = Math.random(100);
+          Math.floor(rand2);
+          if(flag){
+            rand1 *= -1;
+            $("#kb-container").css("transform", "translate(" + rand1 + "%, " + rand2 + "%)");
+          }
+          else{
+            rand2 *= -1;
+            $("#kb-container").css("transform", "translate(" + rand1 + "%, " + rand2 + "%)");
+          }
+          flag = !flag;
+          
           // Shake every 1000 points
-            $( "#kb-container" ).shake(CPM / 10, CPM / 100, 1);
+          //$( "#kb-container" ).shake(CPM / 10, CPM / 100, 1);
 
           console.log("Current heat data array");
           console.log(charArray);
