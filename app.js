@@ -70,14 +70,17 @@ function create2DArray() {
 
 }
 
+
 function calcCPM() {
 
+    let retval;
     let timeElapsed = getTimeElapsed() / 60; //this function gets the amount of time passed since startTimer has been called
     numChar++;
     if (numChar / timeElapsed < 0.1)
       return 0.1
     else
-      return numChar / timeElapsed;
+      retval = Math.round(numChar / timeElapsed);
+      return retval;
 
 }
 
