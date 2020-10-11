@@ -36,8 +36,7 @@ $(document).ready(function(){
           charArray.push(key);
 
           // Shake every 1000 points
-          if (points > 1000 && points % 1000 <= 10)
-            $( "#kb-container" ).shake(100,10,3);
+            $( "#kb-container" ).shake(points / 1000, points / 1000,1);
 
           console.log("Current heat data array");
           console.log(charArray);

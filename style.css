@@ -9,6 +9,11 @@ html {
   animation: Gradient 30s ease infinite;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 a{
     position: absolute;
     right: 0px;
