@@ -2,7 +2,7 @@ var CPM = 0, points = 0, numChar = 0, flag = false, length = 0;
 var flag2 = false;
 var charArray, charNumArray, condensedCharArray;
 var startTime, endTime, numChar = -1;
-var key;
+var key, offset = 0;
 
 
 
@@ -29,6 +29,9 @@ $(document).ready(function(){
           console.log("Current heat data array");
           console.log(charArray);
         }
+
+        changeBG();
+
     });
 
     $(".sign").click(function() {
@@ -91,4 +94,14 @@ function getTimeElapsed() {
   // get seconds 
   var seconds = Math.round(timeDiff);
   return seconds;
+}
+
+function changeBG(){
+
+    offset += CPM / 1000;
+
+    if(offset <= 100){
+        $('body').css("background-position", offset + "%");
+    }
+    
 }
