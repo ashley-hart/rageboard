@@ -9,10 +9,17 @@ var key, offset = 0;
 $(document).ready(function(){
 
     $(document).on("keypress", function(){
+
         if (flag == false){
             numChar++;
             flag = true;
             create2DArray();
+            
+            // Play music
+            const audio = document.querySelector("audio");
+            audio.volume = 0.2;
+            audio.play();
+
             start(); // temporary variable name for Kensal's time function
         }
         else {
@@ -26,18 +33,30 @@ $(document).ready(function(){
           key = event.key || event.keyCode;
           charArray.push(key);
 
+          // Shake every 1000 points
+          if (points % 1000 <= 100)
+            $( "#page-content" ).shake(100,10,3);
+
           console.log("Current heat data array");
           console.log(charArray);
         }
 
-        // Play music
-        const audio = document.querySelector("audio");
-        audio.volume = 0.2;
-        audio.play();
-
         changeBG();
         
     });
+
+    // Shake function
+    jQuery.fn.shake = function(interval,distance,times){
+       interval = typeof interval == "undefined" ? 100 : interval;
+       distance = typeof distance == "undefined" ? 10 : distance;
+       times = typeof times == "undefined" ? 3 : times;
+       var jTarget = $(this);
+       jTarget.css('position','relative');
+       for(var iter=0;iter<(times+1);iter++){
+          jTarget.animate({ left: ((iter%2==0 ? distance : distance*-1))}, interval);
+       }
+       return jTarget.animate({ left: 0},interval);
+    }
 
     setInterval(function(){
         CPM = calcCPM();
