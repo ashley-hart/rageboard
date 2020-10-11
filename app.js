@@ -1,8 +1,8 @@
-var CPS = 0, points = 0, numChar = 0, flag = false, length = 0;
+var CPM = 0, points = 0, numChar = 0, flag = false, length = 0;
 var flag2 = false;
 var charArray, charNumArray, condensedCharArray;
 var startTime, endTime, numChar = -1;
-var key;
+var key, offset = 0;
 
 
 
@@ -16,10 +16,10 @@ $(document).ready(function(){
             start(); // temporary variable name for Kensal's time function
         }
         else {
-          CPS = calcCPS();
-          document.getElementById("cpsPar").innerHTML = ("CPS = " + CPS);
-          if (CPS < 1000) {
-            points += Math.round(CPS / 10);
+          CPM = calcCPM();
+          document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
+          if (CPM < 10000) {
+            points += Math.round(CPM / 10);
             document.getElementById("ptsPar").innerHTML = ("Points = " + points);
           }
           
@@ -29,9 +29,12 @@ $(document).ready(function(){
           console.log("Current heat data array");
           console.log(charArray);
         }
+
+        changeBG();
+
     });
 
-    $(".sign").click(function(){
+    $(".sign").click(function() {
 
         charArray.sort();
         console.log("sorted array:" + charArray);
@@ -67,9 +70,9 @@ function create2DArray() {
 
 }
 
-function calcCPS() {
+function calcCPM() {
 
-    let timeElapsed = getTimeElapsed(); //this function gets the amount of time passed since startTimer has been called
+    let timeElapsed = getTimeElapsed() / 60; //this function gets the amount of time passed since startTimer has been called
     numChar++;
     if (numChar / timeElapsed < 0.1)
       return 0.1
@@ -91,4 +94,15 @@ function getTimeElapsed() {
   // get seconds 
   var seconds = Math.round(timeDiff);
   return seconds;
+}
+
+function changeBG(){
+
+    if (CPM < 10000)
+      offset += CPM / 1000;
+
+    if(offset <= 100){
+        $('body').css("background-position", offset + "%");
+    }
+    
 }
