@@ -1,0 +1,171 @@
+.keyboard {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* height: 100%; */
+    width: 100%;
+    padding: 50px 0;
+    background: #0B3954;
+    user-select: none;
+    transition: bottom 0.4s;;
+}
+
+.keyboard_keys {
+    text-align: center;
+}
+
+.keyboard_key {
+    height: 45px;
+    width: 1%;
+    min-width: 45px;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    /* font-size: 1.05 rem; */
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    /* The following helps us deal with the aboslute positioned keys. */
+    position: relative;
+    /* position: absolute; */
+}
+
+.keyboard_key:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard_key--wide {
+    width: 12%
+}
+
+.keyboard_key--extra-wide {
+    width: 36%;
+    max-width: 500px;
+}
+
+.keyboard_key--activatable::after {
+    content: '';
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+.keyboard_key--active::after {
+    background: #BFD7EA;
+}
+
+.keyboard_key--dark {
+   background: rgba(0, 0, 0, 0.25); 
+}
+
+.keyboard_pressed {
+    background: #C81D25; 
+    color: white;
+}
+
+/*  
+    These are still a bit problematic! 
+    Do not trust this code without revision, reconsideration  
+    and refactoring (as needed)! 
+*/
+
+@media (max-width: 2400px) {
+    .keyboard_key {
+        font-size: 1.25rem;
+        width: 7%;
+        min-width: 45px;
+        max-width: 95px;
+    }
+
+    .keyboard_key--extra-wide {
+        width: 36%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .keyboard_key {
+        font-size: 1.0rem;
+        width: 6%;
+        min-width: 45px;
+        max-width: 90px;
+    }
+
+    .keyboard_key--wide {
+        width: 12%;
+    }
+
+    .keyboard_key--extra-wide {
+        width: 36%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .keyboard_key {
+        font-size: .8rem;
+        width: 4%;
+        min-width: 45px;
+        max-width: 90px;
+    }
+
+    .keyboard_key--wide {
+        width: 8%;
+    }
+
+    .keyboard_key--extra-wide {
+        width: 36%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .keyboard_key {
+        font-size: .7rem;
+        width: 4%;
+        min-width: 40px;
+        max-width: 85px;
+    }
+
+    .keyboard_key--wide {
+        width: 8%;
+    }
+
+    .keyboard_key--extra-wide {
+        width: 30%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .keyboard_key {
+        font-size: .7rem;
+        width: 3%;
+        min-width: 40px;
+        max-width: 85px;
+    }
+    
+    .keyboard_key--wide {
+        width: 6%;
+    }
+
+    .keyboard_key--extra-wide {
+        width: 20%;
+        max-width: 500px;
+    }
+} */
