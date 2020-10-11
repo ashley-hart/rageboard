@@ -30,7 +30,6 @@ const Keyboard = {
         // Setup main elements
         this.elements.main.classList.add("keyboard");
         this.elements.keysContainer.classList.add("keyboard_keys");
-        // this.elements.keysContainer.classList.add("kb-container");
         this.elements.keysContainer.appendChild(this._createKeys());
 
         this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard_key");
