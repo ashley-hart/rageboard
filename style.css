@@ -1,8 +1,18 @@
+/*
+Color Palette
+--falu-red: #7f1019ff;
+--amaranth-red: #da1b2bff;
+--medium-orchid: #b05fe9ff;
+--honolulu-blue: #0471a6ff;
+--oxford-blue: #011638ff;
+*/
+
 html {
   color: #fff;
   width: 100vw;
   height: 90vh;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    background: linear-gradient(-45deg, #7f1019ff,#da1b2bff, #b05fe9ff, #0471a6ff, #011638ff);
   background-size: 400% 400%;
   -webkit-animation: Gradient 30s ease infinite;
   -moz-animation: Gradient 30s ease infinite;
@@ -14,7 +24,7 @@ html, body {
     overflow-x: hidden;
 }
 
-a{
+a {
     position: absolute;
     right: 0px;
     top: 10px;
@@ -258,5 +268,5 @@ a{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin: 8px 10px 12px;
 }
-.gradient-button-1 {background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%)}
+.gradient-button-1 {background-image: linear-gradient(to right, #0471A6 0%, #CD8BF9 51%, #DA1B2B 100%)}
 .gradient-button-1:hover { background-position: right center; }
