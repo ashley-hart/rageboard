@@ -27,6 +27,7 @@ $(document).ready(function(){
           document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
           if (CPM < 10000) {
             points += Math.round(CPM / 10);
+            go(Math.round(CPM / 10));
             document.getElementById("ptsPar").innerHTML = ("Points = " + points);
           }
           
@@ -147,18 +148,18 @@ function changeBG(){
   the link below. This fucntion controls the animations, I believe.
   Link: https://codepen.io/fonrus/pen/PwvzKE
 */
-score = 0;
+//var points = 0;
 
 function go(x){
-  $({score: 0}).animate({score: x},{
+  $({points: 0}).animate({points: x},{
     duration: 1000,
     easing:"linear",
     step: function(now, fx){
-      $("#score").html(score + Math.floor(now));
+      $("#score").html(points + Math.floor(now));
     },
     queue:false,
     complete: function(now, fx){
-      score += x;
+      points += x;
     }
   });
   $("#tag").fadeIn({
