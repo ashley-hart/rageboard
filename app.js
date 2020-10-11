@@ -26,7 +26,7 @@ $(document).ready(function(){
         }
         else {
           CPM = Math.round(calcCPM());
-          document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
+          document.getElementById("cpmPar").innerHTML = (CPM);
           if (CPM < 10000) {
             //points += Math.round(CPM / 10);
             go(Math.round(CPM / 100));
@@ -81,7 +81,7 @@ $(document).ready(function(){
       if(isNaN(CPM)){
           CPM = 0;
       }
-      document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
+      document.getElementById("cpmPar").innerHTML = (CPM);
       changeBG(true);
   }, 500);
     
