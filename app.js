@@ -31,8 +31,17 @@ $(document).ready(function(){
         }
 
         changeBG();
-
+        
     });
+
+    setInterval(function(){
+        CPM = calcCPM();
+        if(isNaN(CPM)){
+            CPM = 0;
+        }
+        document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
+    }, 1000);
+    
 
     $(".sign").click(function() {
 
