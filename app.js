@@ -18,7 +18,7 @@ $(document).ready(function(){
         else {
           CPM = calcCPM();
           document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
-          if (CPM < 1000) {
+          if (CPM < 10000) {
             points += Math.round(CPM / 10);
             document.getElementById("ptsPar").innerHTML = ("Points = " + points);
           }
