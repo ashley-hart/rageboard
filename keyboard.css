@@ -75,12 +75,6 @@
     color: white;
 }
 
-/*  
-    These are still a bit problematic! 
-    Do not trust this code without revision, reconsideration  
-    and refactoring (as needed)! 
-*/
-
 @media (max-width: 2400px) {
     .keyboard_key {
         font-size: 1.25rem;

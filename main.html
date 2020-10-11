@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='my_style.css'>
+    <link rel="stylesheet" href="keyboard.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Nunito">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -11,19 +14,31 @@
     <title>Rageboard</title>
 </head>
 <body>
-    <!--<h1>Rageboard</h1>-->
-    <div class="sign">
-        <span class="fast-flicker">Ra</span>geb<span class="flicker">oa</span>rd
-      </div>
+    <div id="page">
+        <header id="page-header">
+                <div class="inner">
+                    <div class="sign">
+                        <span class="fast-flicker">Ra</span>geb<span class="flicker">oa</span>rd
+                        
+                        <a href="./about.html" class="gradient-button gradient-button-1">About</a><br />
+                        
+                        <p id="cpsPar"></p>
+                        <p id="ptsPar"></p>
+                    </div>
+                </div>
+        </header>
+            
+        <!-- Content for the middle of the page -->
+        <div id="page-content">
+            <div class="inner">
+            </div>
+        </div>
 
-    <a href="./about.html" class="gradient-button gradient-button-1">About</a><br />
-       
-       
-       
-    <p id="cpsPar"></p>
-    <p id="ptsPar"></p>
-
+        <!-- Might add a footer, might not -->
+        <!-- <footer id="page-footer">
+        </footer> end footer -->
+    </div> 
+<script src="keyboard.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
-    
 </body>
 </html>
