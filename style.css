@@ -11,6 +11,8 @@ html {
   color: #fff;
   width: 100vw;
   height: 90vh;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  /* background: linear-gradient(-45deg, #7f1019ff,#da1b2bff, #b05fe9ff, #0471a6ff, #011638ff); */
   background: linear-gradient(-45deg, #7F1019, #b61624, #6c09ae, #045e8b, #03378c);
   background-size: 400% 400%;
   -webkit-animation: Gradient 30s ease infinite;
