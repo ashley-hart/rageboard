@@ -36,7 +36,7 @@ $(document).ready(function(){
           charArray.push(key);
 
           // Shake every 1000 points
-            $( "#kb-container" ).shake(points / 1000, points / 1000,1);
+            $( "#kb-container" ).shake(CPM / 50, CPM / 100, 1);
 
           console.log("Current heat data array");
           console.log(charArray);
