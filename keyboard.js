@@ -21,10 +21,11 @@ const Keyboard = {
 
         // Create main elements
         this.elements.main = document.createElement("div");
-        this.elements.keysContainer = document.createElement("div");
+        // this.elements.keysContainer = document.createElement("div");
+        this.elements.keysContainer = document.getElementById("kb-container");
 
-        // console.log("Appending kb to: ");
-        // containerDiv.appendChild(this.elements.keysContainer);  
+        console.log("Appending kb to: ");
+        console.log(this.elements.keysContainer);  
 
         // Setup main elements
         this.elements.main.classList.add("keyboard");
