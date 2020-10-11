@@ -68,6 +68,8 @@ div{
 
 #score {
     position: relative;
+    left: 75%;
+    bottom: 30%;
     transform-style: preserve-3d;
     font-size:18px;
     line-height: 18px;
@@ -85,11 +87,18 @@ div{
 }
 
 #cpmPar {
+    position:absolute;
+    left: 20%;
+    bottom: 40%;
     font-size:18px;
     line-height: 18px;
 }
 
-#ptsPar {
+#title {
+    position:relative;
+    left: 75%;
+    bottom: 30%;
+    font-weight: bold;
     font-size:18px;
     line-height: 18px;
 }
