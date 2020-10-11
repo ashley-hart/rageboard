@@ -163,6 +163,7 @@ function go(x){
       points += x;
     }
   });
+  /*
   $("#tag").fadeIn({
     duration:700,
     easing:"linear",
@@ -175,6 +176,7 @@ function go(x){
       $(this).css("top",-55 * ( 2 - now) + "px");
     }
   });
+  */
 
 }
   
