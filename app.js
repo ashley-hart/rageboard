@@ -26,16 +26,17 @@ $(document).ready(function(){
           CPM = Math.round(calcCPM());
           document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
           if (CPM < 10000) {
-            points += Math.round(CPM / 10);
-            go(Math.round(CPM / 10));
-            document.getElementById("ptsPar").innerHTML = ("Points = " + points);
+            //points += Math.round(CPM / 10);
+            go(Math.round(CPM / 100));
+            console.log("Score = " + points);
+            //document.getElementById("ptsPar").innerHTML = ("Points = " + points);
           }
           
           key = event.key || event.keyCode;
           charArray.push(key);
 
           // Shake every 1000 points
-          if (points % 1000 <= 100)
+          if (points > 1000 && points % 1000 <= 10)
             $( "#page-content" ).shake(100,10,3);
 
           console.log("Current heat data array");
@@ -136,7 +137,7 @@ function getTimeElapsed() {
 function changeBG(){
 
     if (CPM < 10000)
-      offset += CPM / 1000;
+      offset += CPM / 10000;
 
     if(offset <= 100){
         $('html').css("background-position", offset + "%");
@@ -162,6 +163,7 @@ function go(x){
       points += x;
     }
   });
+  /*
   $("#tag").fadeIn({
     duration:700,
     easing:"linear",
@@ -174,6 +176,7 @@ function go(x){
       $(this).css("top",-55 * ( 2 - now) + "px");
     }
   });
+  */
 
 }
   
