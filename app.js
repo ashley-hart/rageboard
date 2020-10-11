@@ -138,7 +138,41 @@ function changeBG(){
       offset += CPM / 1000;
 
     if(offset <= 100){
-        $('body').css("background-position", offset + "%");
+        $('html').css("background-position", offset + "%");
     }
-    
 }
+
+/*
+  The following has been taken from the Scout Counter found in
+  the link below. This fucntion controls the animations, I believe.
+  Link: https://codepen.io/fonrus/pen/PwvzKE
+*/
+score = 0;
+
+function go(x){
+  $({score: 0}).animate({score: x},{
+    duration: 1000,
+    easing:"linear",
+    step: function(now, fx){
+      $("#score").html(score + Math.floor(now));
+    },
+    queue:false,
+    complete: function(now, fx){
+      score += x;
+    }
+  });
+  $("#tag").fadeIn({
+    duration:700,
+    easing:"linear",
+    step:function(now, fx){
+      $(this).css("top", -55 * now  +"px");
+    }
+  }).fadeOut({
+    duration:300,
+    step:function(now, fx){
+      $(this).css("top",-55 * ( 2 - now) + "px");
+    }
+  });
+
+}
+  

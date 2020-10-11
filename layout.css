@@ -54,3 +54,42 @@ div{
     margin-right: auto;
     text-align: center;
 }
+
+#title {
+    transform-style: preserve-3d;
+    position: relative;
+    display: block;
+    /* top:-125px;
+    left:50%; */
+    /* transform: translateX(-50%); */
+    font-size:18px;
+    line-height: 24px;
+}
+
+#score {
+    position: relative;
+    transform-style: preserve-3d;
+    font-size:18px;
+    line-height: 18px;
+}
+
+#tag {
+    transform-style: preserve-3d;
+    display: none;
+    position:absolute;
+    top: -55px;
+    left:50%;
+    transform: translateX(-50%);
+    font-size:18px;
+    line-height: 50px;
+}
+
+#cpmPar {
+    font-size:18px;
+    line-height: 18px;
+}
+
+#ptsPar {
+    font-size:18px;
+    line-height: 18px;
+}
