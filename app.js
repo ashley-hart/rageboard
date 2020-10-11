@@ -31,7 +31,7 @@ $(document).ready(function(){
         }
     });
 
-    $(".sign").click(function(){
+    $(".sign").click(function() {
 
         charArray.sort();
         console.log("sorted array:" + charArray);
@@ -69,7 +69,7 @@ function create2DArray() {
 
 function calcCPS() {
 
-    let timeElapsed = getTimeElapsed(); //this function gets the amount of time passed since startTimer has been called
+    let timeElapsed = getTimeElapsed() / 60; //this function gets the amount of time passed since startTimer has been called
     numChar++;
     if (numChar / timeElapsed < 0.1)
       return 0.1
