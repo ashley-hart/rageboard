@@ -98,7 +98,8 @@ function getTimeElapsed() {
 
 function changeBG(){
 
-    offset += CPM / 1000;
+    if (CPM < 10000)
+      offset += CPM / 1000;
 
     if(offset <= 100){
         $('body').css("background-position", offset + "%");
