@@ -67,12 +67,13 @@ div{
 }
 
 #score {
+    font-family: Josefin Sans;
     position: relative;
     left: 75%;
     bottom: 30%;
     transform-style: preserve-3d;
-    font-size:18px;
-    line-height: 18px;
+    font-size:25px;
+    line-height: 32px;
 }
 
 #tag {
@@ -86,19 +87,32 @@ div{
     line-height: 50px;
 }
 
+.blurry-text{
+    color: transparent;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.918);
+}
+
+.textshadow .blurry-text {
+    color: transparent;
+    text-shadow: 0 0 1px rgba(255,255,255,0.5);
+ }
+
 #cpmPar {
+    font-family: Josefin Sans;
     position:absolute;
     left: 20%;
-    bottom: 40%;
-    font-size:18px;
+    bottom: 30%;
+    font-size:26px;
     line-height: 18px;
 }
 
+
 #title {
+    font-family: Josefin Sans;
     position:relative;
     left: 75%;
     bottom: 30%;
     font-weight: bold;
-    font-size:18px;
-    line-height: 18px;
+    font-size:26px;
+    line-height: 22px;
 }
