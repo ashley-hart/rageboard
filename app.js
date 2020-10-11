@@ -16,7 +16,7 @@ $(document).ready(function(){
             start(); // temporary variable name for Kensal's time function
         }
         else {
-          CPM = calcCPM();
+          CPM = Math.round(calcCPM());
           document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
           if (CPM < 10000) {
             points += Math.round(CPM / 10);
