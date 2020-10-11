@@ -1,4 +1,4 @@
-var CPS = 0, points = 0, numChar = 0, flag = false, length = 0;
+var CPM = 0, points = 0, numChar = 0, flag = false, length = 0;
 var flag2 = false;
 var charArray, charNumArray, condensedCharArray;
 var startTime, endTime, numChar = -1;
@@ -16,10 +16,10 @@ $(document).ready(function(){
             start(); // temporary variable name for Kensal's time function
         }
         else {
-          CPS = calcCPS();
-          document.getElementById("cpsPar").innerHTML = ("CPS = " + CPS);
-          if (CPS < 1000) {
-            points += Math.round(CPS / 10);
+          CPM = calcCPM();
+          document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
+          if (CPM < 1000) {
+            points += Math.round(CPM / 10);
             document.getElementById("ptsPar").innerHTML = ("Points = " + points);
           }
           
@@ -67,7 +67,7 @@ function create2DArray() {
 
 }
 
-function calcCPS() {
+function calcCPM() {
 
     let timeElapsed = getTimeElapsed() / 60; //this function gets the amount of time passed since startTimer has been called
     numChar++;
