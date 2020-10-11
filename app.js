@@ -38,9 +38,9 @@ $(document).ready(function(){
           charArray.push(key);
 
 
-          rand1 = Math.random(100);
+          rand1 = Math.random(20);
           Math.floor(rand1);
-          rand2 = Math.random(100);
+          rand2 = Math.random(20);
           Math.floor(rand2);
           if(flag){
             rand1 *= -1;
@@ -50,7 +50,7 @@ $(document).ready(function(){
             rand2 *= -1;
             $("#kb-container").css("transform", "translate(" + rand1 + "%, " + rand2 + "%)");
           }
-          flag = !flag;
+          flag2 = !flag2;
           
           // Shake every 1000 points
           //$( "#kb-container" ).shake(CPM / 10, CPM / 100, 1);
