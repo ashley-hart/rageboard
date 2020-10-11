@@ -61,12 +61,13 @@ $(document).ready(function(){
     }
 
     setInterval(function(){
-        CPM = calcCPM();
-        if(isNaN(CPM)){
-            CPM = 0;
-        }
-        document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
-    }, 1000);
+      CPM = calcCPM();
+      if(isNaN(CPM)){
+          CPM = 0;
+      }
+      document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
+      changeBG(true);
+  }, 500);
     
 
     $(".sign").click(function() {
@@ -134,14 +135,31 @@ function getTimeElapsed() {
   return seconds;
 }
 
-function changeBG(){
+function changeBG(isNegative){
 
-    if (CPM < 10000)
-      offset += CPM / 10000;
-
-    if(offset <= 100){
-        $('html').css("background-position", offset + "%");
+  if(isNegative){
+    if (CPM < 10000){
+      offset -= 5;
+      console.log("offset: " + offset);
     }
+  }
+  else{
+    if (CPM < 10000){
+      offset += 1;
+      console.log("offset: " + offset);
+    }
+  }
+
+  if (offset > 100) {
+    offset = 100;
+  }
+  if (offset < 0) {
+    offset = 0;
+  }
+  if (offset <= 100 && offset >= 0) {
+    $('html').css("background-position", offset + "%");
+  }
+    
 }
 
 /*
