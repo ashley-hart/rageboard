@@ -30,6 +30,11 @@ $(document).ready(function(){
           console.log(charArray);
         }
 
+        // Play music
+        const audio = document.querySelector("audio");
+        audio.volume = 0.2;
+        audio.play();
+
         changeBG();
         
     });
