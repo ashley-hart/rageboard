@@ -27,7 +27,7 @@ $(document).ready(function(){
           document.getElementById("cpmPar").innerHTML = ("CPM = " + CPM);
           if (CPM < 10000) {
             //points += Math.round(CPM / 10);
-            go(Math.round(CPM / 10));
+            go(Math.round(CPM / 100));
             console.log("Score = " + points);
             //document.getElementById("ptsPar").innerHTML = ("Points = " + points);
           }
@@ -36,7 +36,7 @@ $(document).ready(function(){
           charArray.push(key);
 
           // Shake every 1000 points
-          if (points % 1000 <= 200)
+          if (points > 1000 && points % 1000 <= 50)
             $( "#page-content" ).shake(100,10,3);
 
           console.log("Current heat data array");
@@ -137,7 +137,7 @@ function getTimeElapsed() {
 function changeBG(){
 
     if (CPM < 10000)
-      offset += CPM / 1000;
+      offset += CPM / 10000;
 
     if(offset <= 100){
         $('html').css("background-position", offset + "%");
