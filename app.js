@@ -36,7 +36,7 @@ $(document).ready(function(){
           charArray.push(key);
 
           // Shake every 1000 points
-          if (points > 1000 && points % 1000 <= 50)
+          if (points > 1000 && points % 1000 <= 10)
             $( "#page-content" ).shake(100,10,3);
 
           console.log("Current heat data array");
